@@ -1,0 +1,28 @@
+<template name="task">
+  <li class="{{#if checked}}checked{{/if}} {{#if private}}private{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+    {{#if isOwner}}
+      <button class="btn btn-default toggle-private">
+        {{#if private}}
+          Private
+        {{else}}
+          Public
+        {{/if}}
+      </button>
+      <button class="btn btn-default toogle-favorite">
+        {{#if favorite}}
+          <!-- <i class="fa fa-star" aria-hidden="true"></i> -->
+          Favorite
+        {{else}}
+          <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
+          Not Favorite
+        {{/if}}
+      </button>
+    {{/if}}
+ 
+    <span class="text"> <strong>{{username}}</strong> - {{{parseEmoticons text}}}</span>
+  </li>
+</template>
